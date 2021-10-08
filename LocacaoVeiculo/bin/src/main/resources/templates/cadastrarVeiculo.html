@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" th:href="@{/css/cadasClienteStyle.css}" />
+		<link rel= "stylesheet" th:href="@{/css/allStyle.css}" />
+	</head>
+	<body>
+		<div class = "Menu">
+			<a th:href="@{/veiculo}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
+			<h1>Cadastrar Veiculo</h1>
+			<div id="formulario">
+				<form>
+					<label for="nomeVeiculo">Nome do veiculo: </label>
+					<input type="text" id="nomeVeiculo" name="nomeVeiculo"><br><br>
+					<label for="modeloVeiculo">Modelo: </label>
+					<input type="text" id="modeloVeiculo" name="modeloVeiculo">
+					<label for="placaVeiculo">Placa: </label>
+					<input type="text" id="placaVeiculo" name="placaVeiculo"><br><br>
+					<label for="capPessoas">Capacidade de pessoas: </label>
+					<input type="number" id="capPessoas" name="capPessoas">
+					<label for="quantPortas">N° portas: </label>
+					<input type="number" id="quantPortas" name="quantPortas"><br><br>
+					<label for="imgVeiculo">Selecione uma imagem</label>
+					<input type="file" id="imgVeiculo" name="imgVeiculo" value="Imagem"><br><br>
+					<div id="botaoConfirma">
+						<input type="button" onclick="alert('Cadastro realizado com sucesso')" value="Confirmar cadastro"id="confirmarCadastro" name="confirmarCadastro">
+					</div>
+				</form>
+		</div>
+		</div>
+	</body>
+</html>

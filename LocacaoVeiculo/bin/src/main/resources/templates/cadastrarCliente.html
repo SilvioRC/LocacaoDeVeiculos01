@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/cadasClienteStyle.css}" />
+	<link rel="stylesheet" th:href="@{/css/allStyle.css}" />
+</head>
+
+<body>
+	<div class="Menu">
+		<a th:href="@{/cliente}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
+		<h1>Cadastrar cliente</h1>
+		<div id="formulario">
+			<form>
+				<label for="nomeCliente">Nome: </label>
+				<input type="text" id="nomeCliente" name="nomeCliente">
+				<label for="dtCliente">Data de nascimento: </label>
+				<input type="date" id="dtCliente" name="dtCliente"><br><br>
+				<label for="ruaCliente">Rua: </label>
+				<input type="text" id="ruaCliente" name="ruaCliente">
+				<label for="bairroCliente">Bairro: </label>
+				<input type="text" id="bairroCliente" name="bairroCliente">
+				<label for="numResCliente">N°: </label>
+				<input type="number" id="numResCliente" name="numResCliente"><br><br>
+				<label for="emailCliente">Email: </label>
+				<input type="email" id="emailCliente" name="emailCliente">
+				<label for="telCliente">Telefone: </label>
+				<input type="number" id="dddTelCliente" name="dddTelCliente">
+				<input type="number" id="telCliente" name="telCliente"><br><br>
+				<label for="cpfCliente">CPF: </label>
+				<input type="number" id="cpfCliente" name="cpfCliente"><br><br>
+				<input type="checkbox" id="clienteJuridico" name="clienteJuridico">
+				<label for="clienteJuridico">Pessoa juridica </label>
+				<label for="cnpjCliente">CNPJ: </label>
+				<input type="number" id="cnpjCliente" name="cnpjCliente"><br><br>
+				<div id="botaoConfirma">
+					<input type="button" onclick="alert('Cadastro realizado com sucesso')" value="Confirmar cadastro"id="confirmarCadastro" name="confirmarCadastro">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

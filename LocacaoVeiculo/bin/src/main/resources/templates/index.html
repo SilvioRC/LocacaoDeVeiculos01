@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel= "stylesheet" th:href="@{/css/indexStyle.css}" />
+		<link rel= "stylesheet" th:href="@{/css/allStyle.css}" />
+	</head>
+	<body>
+		<div class = "Menu">
+			<h1>Locação de veiculo</h1>
+			<div class = "Opcoes">
+				<ul>
+					<li><a th:href="@{/cliente}"><button><div><img th:src="@{/images/iconeCliente.png}" /></div>Cliente</button></a></li>
+					<li><a th:href="@{/alocar}"><button><div><img th:src="@{/images/iconeMais.png}" /></div>Alocar</button></a></li>
+					<li><a th:href="@{/desalocar}"><button><div><img th:src="@{/images/iconeMenos.png}" /></div>Desalocar</button></a></li>
+					<li><a th:href="@{/veiculo}"><button><div><img th:src="@{/images/iconeVeiculo.png}" /></div>Veiculo</button></a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+body {
+  background-color: rgb(255, 255, 255);
+}
+.Menu{
+	background-color: #C1BDBE;
+	width: 50%;
+	margin: auto;
+	position: center;
+	margin-top: 15%;
+	padding-bottom: 2%;
+	border: 1px solid black;
+	
+}
+
+.Menu #botaoVoltar button{
+	width: 50px;
+	height: 50px;
+	background-color: #C1BDBE;
+	border: none;
+	position: static;
+	
+}
+
+.Menu #botaoVoltar button img{
+	width: 50px;
+	height: 50px;
+	
+}
+
+.Menu h1{
+	text-align: center;
+	color: rgb(0, 0, 0);
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bolder;
+	
+}
+
+.Menu .Opcoes{
+	width:80%;
+	margin:auto;
+	text-align: center;
+	
+}
+.Menu .Opcoes ul{
+	list-style-type: none;
+	
+	overflow: hidden;
+	margin: auto;
+	padding: 0;
+	width: auto;
+	
+}
+
+.Menu .Opcoes ul li {
+	float: left;
+	margin-left: 3.5%;
+	padding-right: 3px;
+	
+}
+.Menu .Opcoes ul li a button{
+	background-color: #A9A4A4;
+	width:auto;
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+.Menu .Opcoes ul li a button div{
+	float:left;
+}
+.Menu .Opcoes ul li a button div img{
+	width:20px;
+	height:20px;
+}
+
+.Menu #formulario{
+	margin:auto;
+	width: 85%;
+	text-align: left;
+	border: 1px solid black;
+	padding-bottom: 2%;
+	
+}
+
+.Menu #formulario form label{
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-weight: 500;
+}
+
+.Menu #formulario form #botaoConfirma{
+	text-align: center;
+}
+.Menu #formulario form #confirmarCadastro{
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #A9A4A4;
+}
+
+
+
+
