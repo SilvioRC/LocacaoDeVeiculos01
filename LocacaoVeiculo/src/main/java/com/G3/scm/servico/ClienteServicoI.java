@@ -47,6 +47,7 @@ public class ClienteServicoI implements ClienteServico {
 				endereco.setCpf(cliente.getCpf());
 				enderecoRepository.save(endereco);
 				cliente.setEndereco(endereco);
+				cliente.getEndereco().setNum(cliente.getNum());
 				clienteRepository.save(cliente);
 				logger.info(">>>>>> 4. comando save executado  ");
 				modelAndView.addObject("clientes", clienteRepository.findAll());

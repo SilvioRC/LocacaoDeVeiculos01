@@ -78,6 +78,8 @@ public class ClienteController {
 		Cliente umCliente = servico.findById(id);
 		umCliente.setCpf(cliente.getCpf());
 		umCliente.setNome(cliente.getNome());
+		umCliente.setDtNascimento(cliente.getDtNascimento());
+		umCliente.setTelefone(cliente.getTelefone());
 		umCliente.setEmail(cliente.getEmail());
 		umCliente.setCep(cliente.getCep());
 		modelAndView = servico.saveOrUpdate(umCliente);

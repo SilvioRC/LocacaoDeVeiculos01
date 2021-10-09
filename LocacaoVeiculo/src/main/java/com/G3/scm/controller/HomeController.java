@@ -21,7 +21,7 @@ public class HomeController {
 	@GetMapping("/consultarCliente")
 	public ModelAndView consultarCliente() {
 		return new ModelAndView("consultarCliente");
-	}*/
+	}
 	
 	@GetMapping("/veiculo")
 	public ModelAndView menuVeiculo() {
@@ -35,7 +35,7 @@ public class HomeController {
 	@GetMapping("/consultarVeiculo")
 	public ModelAndView consultarVeiculo() {
 		return new ModelAndView("consultarVeiculo");
-	}
+	}*/
 	
 	@GetMapping("/alocar")
 	public ModelAndView alocar() {

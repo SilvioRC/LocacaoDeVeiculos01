@@ -17,12 +17,12 @@ public class Endereco {
 	private String bairro;
 	private String localidade;
 	private String uf;
+	private String num;
 
 	public Endereco() {
 	}
 
-	public Endereco(String cpf, String cep, String logradouro, String complemento, String bairro, String localidade,
-			String uf) {
+	public Endereco(String cpf, String cep, String logradouro, String complemento, String bairro, String localidade,String uf, String num) {
 		this.cpf = cpf;
 		this.cep = cep;
 		this.logradouro = logradouro;
@@ -30,6 +30,17 @@ public class Endereco {
 		this.bairro = bairro;
 		this.localidade = localidade;
 		this.uf = uf;
+		this.num = num;
+	}
+	
+	
+
+	public String getNum() {
+		return num;
+	}
+
+	public void setNum(String num) {
+		this.num = num;
 	}
 
 	public String getCpf() {

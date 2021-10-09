@@ -6,8 +6,45 @@
 	</head>
 	<body>
 		<div class = "Menu">
-			<a th:href="@{/veiculo}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
+			<a th:href="@{/sig/menuVeiculo}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
 			<h1>Consultar Veiculo</h1>
+			<div class="bodyTable" th:switch="${veiculos}">
+			<h5 th:case="null">Não existem veiculos cadastrados ainda!</h5>
+			<div th:case="*">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Placa</th>
+							<th>Nome</th>
+							<th>Modelo</th>
+							<th>capacidade</th>
+							<th>Km</th>
+							<th>Locado</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="veiculo : ${veiculos}">
+							<td th:text="${veiculo.id}"></td>
+							<td th:text="${veiculo.placa}"></td>
+							<td th:text="${veiculo.nome}"></td>
+							<td th:text="${veiculo.modelo}"></td>
+							<td th:text="${veiculo.capacidade}"></td>
+							<td th:text="${veiculo.km}"></td>
+							<td th:text="${veiculo.locado}"></td>
+							<td>
+								<div class="btn-group pull-right">
+									<a class="btn btn-sm btn-primary"
+										th:href="@{/sig/veiculos/{placa}(placa=${veiculo.placa})}">Editar</a>
+									<a class="delete btn btn-sm btn-danger"
+										th:href="@{/sig/veiculo/{id}(id=${veiculo.id})}">Excluir</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 		</div>
 	</body>
 </html>

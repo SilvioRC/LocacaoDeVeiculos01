@@ -1,6 +1,7 @@
 package com.G3.scm.model;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,19 +36,22 @@ public class Cliente {
 	@ManyToOne
 	private Endereco endereco;
 	private String telefone;
-
+	private String num;
+	private String dtNascimento;
 	private String dataCadastro;
 
 	public Cliente() {
 	}
-	public Cliente(String cpf, String nome, String email, Endereco endereco, String telefone) {
+	public Cliente(String cpf, String nome, String email, Endereco endereco, String telefone, String num,String dataN) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;
 		this.email = email;
 		this.cep = cep;
+		this.num = num;
 		this.endereco = endereco;
 		this.telefone = telefone;
+		this.dtNascimento = dataN;
 		DateTime dataAtual = new DateTime();
 		setDataCadastro(dataAtual);
 	}
@@ -59,7 +63,15 @@ public class Cliente {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	
 
+	public String getNum() {
+		return num;
+	}
+	public void setNum(String num) {
+		this.num = num;
+	}
 	public String getCpf() {
 		return cpf;
 	}
@@ -115,5 +127,15 @@ public class Cliente {
 		this.dataCadastro = dataAtual.toString(fmt);
 
 	}
+	public String getDtNascimento() {
+		return dtNascimento;
+	}
+	public void setDtNascimento(String dtNascimento) {
+		this.dtNascimento = dtNascimento;
+	}
+	
+	
+	
+	
 
 }

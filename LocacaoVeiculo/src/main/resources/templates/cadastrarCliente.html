@@ -21,25 +21,20 @@
 				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="textdanger"> </span>
 				
 				<label for="dtCliente">Data de nascimento: </label>
-				<input type="date" id="dtCliente" name="dtCliente"><br><br>
+				<input type="date" th:field="*{dtNascimento}" id="dtCliente" name="dtCliente"><br><br>
 				
 				<label for="cep" class="col-form-label">CEP</label>  
 				<input type="text" th:field="*{cep}" class="form-control" id="cep"placeholder="CEP">
 				<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span> 
 				
-				<label for="ruaCliente">Rua: </label>
-				<input type="text" id="ruaCliente" name="ruaCliente">
-				<label for="bairroCliente">Bairro: </label>
-				<input type="text" id="bairroCliente" name="bairroCliente">
 				<label for="numResCliente">N°: </label>
-				<input type="number" id="numResCliente" name="numResCliente"><br><br>
+				<input type="text" th:field="*{num}" id="numResCliente" name="numResCliente"><br><br>
 				
 				<label for="emailCliente">Email: </label>
 				<input type="text"  th:field="*{email}" id="emailCliente" name="emailCliente">
 				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span> 
 				
 				<label for="telCliente">Telefone: </label>
-				<input type="text" id="dddTelCliente" name="dddTelCliente">
 				<input type="text" th:field="*{telefone}" id="telCliente" name="telCliente"><br><br>
 				
 				<label for="cpfCliente">CPF: </label>
