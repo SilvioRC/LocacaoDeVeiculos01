@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.G3.scm.model.Cliente;
+import com.G3.scm.model.Veiculo;
 import com.G3.scm.servico.ClienteServico;
+import com.G3.scm.servico.VeiculoServico;
 
 @Controller
 @RequestMapping(path = "/sig")
@@ -20,6 +22,8 @@ public class ClienteController {
 	Logger logger = LogManager.getLogger(ClienteController.class);
 	@Autowired
 	ClienteServico servico;
+	@Autowired
+	VeiculoServico servicoV;
 
 	@GetMapping("/menuCliente")
 	public ModelAndView menuCliente() {
@@ -85,4 +89,60 @@ public class ClienteController {
 		modelAndView = servico.saveOrUpdate(umCliente);
 		return modelAndView;
 	}
+	
+	@GetMapping("/alocar")
+	public ModelAndView alocacao(Cliente cliente) {
+		ModelAndView mv = new ModelAndView("alocar");
+		mv.addObject("cliente", cliente);
+		return mv;
+	}
+	
+	@PostMapping("/realizarAlocacao")
+	public ModelAndView alocarCliente( Cliente cliente) {
+		ModelAndView modelAndView = new ModelAndView("consultarCliente");
+		Cliente umCliente = servico.findByCpf(cliente.getCpf());
+		Veiculo umVeiculo = servicoV.findByPlaca(cliente.getVeiculoPlaca());
+		if(umVeiculo.isLocado() == true || umCliente.isAlocacao() == true ) {
+			return new ModelAndView("alocar");
+		}
+		
+		else {
+			umCliente.setVeiculoPlaca(umVeiculo.getPlaca());
+			umCliente.setVeiculoNome(umVeiculo.getNome());
+			umCliente.setAlocacao(true);
+			umVeiculo.setLocado(true);
+			modelAndView = servico.saveOrUpdate(umCliente);
+			return modelAndView;
+		}
+		
+	}
+	
+	@GetMapping("/desalocar")
+	public ModelAndView desalocacao(Cliente cliente) {
+		ModelAndView mv = new ModelAndView("desalocar");
+		mv.addObject("cliente", cliente);
+		return mv;
+	}
+	
+	@PostMapping("/realizarDesalocacao")
+	public ModelAndView DesalocarCliente( Cliente cliente) {
+		ModelAndView modelAndView = new ModelAndView("consultarCliente");
+		Cliente umCliente = servico.findByCpf(cliente.getCpf());
+		Veiculo umVeiculo = servicoV.findByPlaca(umCliente.getVeiculoPlaca());
+		if(umVeiculo.isLocado() == false || umCliente.isAlocacao() == false ) {
+			return new ModelAndView("desalocar");
+		}
+		
+		else {
+			umCliente.setVeiculoPlaca("");
+			umCliente.setVeiculoNome("");
+			umCliente.setAlocacao(false);
+			umVeiculo.setLocado(false);
+			modelAndView = servico.saveOrUpdate(umCliente);
+			return modelAndView;
+		}
+		
+	}
+	
+	
 }

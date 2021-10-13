@@ -25,6 +25,11 @@
 							<th>CEP</th>
 							<th>Endereço</th>
 							<th>Dt. Cadastro</th>
+							<th>Alocação</th>
+							<th>Veiculo Pl</th>
+							<th>Veiculo Nome</th>
+							
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -38,6 +43,12 @@
 							<td th:text="${cliente.cep}"></td>
 							<td th:text="${cliente.endereco.logradouro}"></td>
 							<td th:text="${cliente.dataCadastro}"></td>
+							<td th:text="${cliente.alocacao}"></td>
+							<td th:text="${cliente.veiculoPlaca}"></td>
+							<td th:text="${cliente.veiculoNome}"></td>
+							
+							
+							
 							<td>
 								<div class="btn-group pull-right">
 									<a class="btn btn-sm btn-primary"

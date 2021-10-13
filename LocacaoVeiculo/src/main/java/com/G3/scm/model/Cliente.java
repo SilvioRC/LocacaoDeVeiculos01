@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.*;
 
 import org.hibernate.validator.constraints.br.CPF;
@@ -35,6 +36,9 @@ public class Cliente {
 	private String cep;
 	@ManyToOne
 	private Endereco endereco;
+	private String veiculoPlaca;
+	private String veiculoNome;
+	private boolean alocacao;
 	private String telefone;
 	private String num;
 	private String dtNascimento;
@@ -52,6 +56,10 @@ public class Cliente {
 		this.endereco = endereco;
 		this.telefone = telefone;
 		this.dtNascimento = dataN;
+		this.alocacao = false;
+		
+		
+		
 		DateTime dataAtual = new DateTime();
 		setDataCadastro(dataAtual);
 	}
@@ -133,6 +141,29 @@ public class Cliente {
 	public void setDtNascimento(String dtNascimento) {
 		this.dtNascimento = dtNascimento;
 	}
+	public String getVeiculoPlaca() {
+		return veiculoPlaca;
+	}
+	public void setVeiculoPlaca(String veiculoPlaca) {
+		this.veiculoPlaca = veiculoPlaca;
+	}
+	public String getVeiculoNome() {
+		return veiculoNome;
+	}
+	public void setVeiculoNome(String veiculoNome) {
+		this.veiculoNome = veiculoNome;
+	}
+	public boolean isAlocacao() {
+		return alocacao;
+	}
+	public void setAlocacao(boolean alocacao) {
+		this.alocacao = alocacao;
+	}
+
+	
+
+	
+	
 	
 	
 	

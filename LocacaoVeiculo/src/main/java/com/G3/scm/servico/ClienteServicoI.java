@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import com.G3.scm.model.Cliente;
 import com.G3.scm.model.ClienteRepository;
 import com.G3.scm.model.Endereco;
@@ -20,6 +21,7 @@ public class ClienteServicoI implements ClienteServico {
 	private ClienteRepository clienteRepository;
 	@Autowired
 	private EnderecoRepository enderecoRepository;
+
 
 	public Iterable<Cliente> findAll() {
 		return clienteRepository.findAll();
@@ -42,6 +44,7 @@ public class ClienteServicoI implements ClienteServico {
 		ModelAndView modelAndView = new ModelAndView("consultarCliente");
 		try {
 			Endereco endereco = obtemEndereco(cliente.getCep());
+			
 			if (endereco != null) {
 				cliente.setDataCadastro(new DateTime());
 				endereco.setCpf(cliente.getCpf());
@@ -64,6 +67,8 @@ public class ClienteServicoI implements ClienteServico {
 		}
 		return modelAndView;
 	}
+	
+	
 
 	public Endereco obtemEndereco(String cep) {
 		RestTemplate template = new RestTemplate();

@@ -37,15 +37,15 @@ public class HomeController {
 		return new ModelAndView("consultarVeiculo");
 	}*/
 	
-	@GetMapping("/alocar")
+	/*@GetMapping("/alocar")
 	public ModelAndView alocar() {
 		return new ModelAndView("alocar");
-	}
+	}*/
 	
-	@GetMapping("/desalocar")
+	/*@GetMapping("/desalocar")
 	public ModelAndView desalocar() {
 		return new ModelAndView("desalocar");
-	}
+	}*/
 	@GetMapping("/login")
 	public ModelAndView paginaLogin() {
 		return new ModelAndView("paginaLogin");
