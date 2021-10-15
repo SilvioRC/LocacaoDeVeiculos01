@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" th:href="@{/css/cadasClienteStyle.css}" />
-		<link rel= "stylesheet" th:href="@{/css/allStyle.css}" />
-		<script type="text/javascript"> function consulta() {window.open("/sig/veiculos");} </script>
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/cadasClienteStyle.css}" />
+	<link rel="stylesheet" th:href="@{/css/allStyle.css}" />
+	<script type="text/javascript"> function consulta() {window.open("/sig/veiculos");} </script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
-	<body>
-		<div class = "Menu">
-			<a th:href="@{/sig/menuVeiculo}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
-			<h1>Cadastrar Veiculo</h1>
-			<div id="formulario">
-				<form action="#" th:action="@{/sig/veiculos}" th:object="${veiculo}" method="post">
-					<label for="nomeVeiculo">Nome do veiculo: </label>
-					<input type="text" th:field="*{nome}" id="nomeVeiculo" name="nomeVeiculo"><br><br>
-					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="textdanger"> </span>
+</head>
+
+<body>
+	<div class="Menu">
+		<a th:href="@{/sig/menuVeiculo}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
+		<h1>Cadastrar Veiculo</h1>
+		<div id="formulario">
+			<form action="#" th:action="@{/sig/veiculos}" th:object="${veiculo}" method="post">
+				<label for="nomeVeiculo">Nome do veiculo: </label>
+				<input type="text" th:field="*{nome}" id="nomeVeiculo" name="nomeVeiculo"><br><br>
+				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="textdanger"> </span>
 					
 					<label for="modeloVeiculo">Modelo: </label>
 					<input type="text" th:field="*{modelo}" id="modeloVeiculo" name="modeloVeiculo">
@@ -22,20 +24,19 @@
 					<label for="placaVeiculo">Placa: </label>
 					<input type="text" th:field="*{placa}" id="placaVeiculo" name="placaVeiculo"><br><br>
 					
-					<label for="capPessoas">Capacidade de pessoas: </label>
-					<input type="number" th:field="*{capacidade}" id="capPessoas" name="capPessoas">
+					<label for="valorDiaria">Valor da diaria: </label>
+					<input type="number" th:field="*{valorDiaria}" id="valorDiaria" name="valorDiaria">
 					
-					<label for="quantPortas">N° portas: </label>
-					<input type="number" id="quantPortas" name="quantPortas"><br><br>
+					<label for="veiculoCor">Cor: </label>
+					<input type="text" th:field="*{cor}" id="veiculoCor" name="veiculoCor"><br><br>
 					
-					<label for="imgVeiculo">Selecione uma imagem</label>
-					<input type="file" id="imgVeiculo" name="imgVeiculo" value="Imagem"><br><br>
 					
 					<div id="botaoConfirma">
 						<input type="submit"  value="Confirmar cadastro"id="confirmarCadastro" name="confirmarCadastro">
 						<input type="button" value="Consultar veiculos"id="consultaVeiculos" name="consultaVeiculos" onclick="consulta();">
 					</div>
 				</form>
+				<h6 th:text="${message}" class="text-danger"></h6>
 		</div>
 		</div>
 	</body>

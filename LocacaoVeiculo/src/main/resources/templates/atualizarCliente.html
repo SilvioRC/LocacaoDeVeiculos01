@@ -21,7 +21,7 @@
 				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="textdanger"> </span>
 				
 				<label for="dtCliente">Data de nascimento: </label>
-				<input type="date" th:field="*{dtNascimento}" id="dtCliente" name="dtCliente"><br><br>
+				<input type="text" th:field="*{dtNascimentoFormat}" id="dtCliente" name="dtCliente"><br><br>
 				
 				<label for="cep" class="col-form-label">CEP</label>  
 				<input type="text" th:field="*{cep}" class="form-control" id="cep"placeholder="CEP">

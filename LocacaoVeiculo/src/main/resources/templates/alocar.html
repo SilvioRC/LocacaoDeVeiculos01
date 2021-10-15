@@ -11,18 +11,18 @@
 		<a th:href="@{/}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
 		<h1>Alocar</h1>
 		<div id="formulario">
-			<form action="#" th:action="@{/sig/realizarAlocacao}" th:object="${cliente}" method="post">
+			<form action="#" th:action="@{/sig/alocados}" th:object="${alocar}" method="post">
 				<label for="alCpfCliente">CPF: </label>
-				<input type="text" th:field="*{cpf}" id="alCpfCliente" name="alCpfCliente">
+				<input type="text" th:field="*{clienteCpf}" id="alCpfCliente" name="alCpfCliente">
 				
 				<label for="alCodVeiculo">Placa do veiculo: </label>
 				<input type="text"th:field="*{veiculoPlaca}"  id="alCodVeiculo" name="alCodVeiculo"><br><br>
 				
 				<label for="alDtReserva">Data da reserva: </label>
-				<input type="date" id="alDtReserva" name="alDtReserva"><br><br>
+				<input type="text"th:field="*{dtInicioFormat}" id="alDtReserva" name="alDtReserva"><br><br>
 				
 				<label for="alDtDevolucao">Data de devolução: </label>
-				<input type="date" id="alDtDevolucao" name="alDtDevolucao"><br><br>
+				<input type="text"th:field="*{dtEntregaFormat}" id="alDtDevolucao" name="alDtDevolucao"><br><br>
 				
 				<label for="enAlValorDiaria">Valor da diaria: </label>
 				<label for="saAlValorDiaria" id="alValorDiaria" name="alValorDiaria">xxxxxxxxxxxxx </label>

@@ -82,7 +82,8 @@ public class ClienteController {
 		Cliente umCliente = servico.findById(id);
 		umCliente.setCpf(cliente.getCpf());
 		umCliente.setNome(cliente.getNome());
-		umCliente.setDtNascimento(cliente.getDtNascimento());
+		umCliente.setDtNascimentoFormat(cliente.getDtNascimentoFormat());
+		umCliente.setDtNascimento(cliente.getDtNascimentoFormat());
 		umCliente.setTelefone(cliente.getTelefone());
 		umCliente.setEmail(cliente.getEmail());
 		umCliente.setCep(cliente.getCep());
@@ -90,7 +91,7 @@ public class ClienteController {
 		return modelAndView;
 	}
 	
-	@GetMapping("/alocar")
+	/*@GetMapping("/alocar")
 	public ModelAndView alocacao(Cliente cliente) {
 		ModelAndView mv = new ModelAndView("alocar");
 		mv.addObject("cliente", cliente);
@@ -142,7 +143,7 @@ public class ClienteController {
 			return modelAndView;
 		}
 		
-	}
+	}*/
 	
 	
 }

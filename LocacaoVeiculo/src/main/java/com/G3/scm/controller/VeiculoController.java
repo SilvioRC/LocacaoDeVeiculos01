@@ -81,7 +81,8 @@ public class VeiculoController {
 		umVeiculo.setPlaca(veiculo.getPlaca());
 		umVeiculo.setNome(veiculo.getNome());
 		umVeiculo.setModelo(veiculo.getModelo());
-		umVeiculo.setCapacidade(veiculo.getCapacidade());
+		umVeiculo.setCor(veiculo.getCor());
+		umVeiculo.setValorDiaria(veiculo.getValorDiaria());
 		modelAndView = servico.saveOrUpdate(umVeiculo);
 		return modelAndView;
 	}

@@ -1,5 +1,6 @@
 package com.G3.scm.model;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
@@ -36,12 +37,13 @@ public class Cliente {
 	private String cep;
 	@ManyToOne
 	private Endereco endereco;
-	private String veiculoPlaca;
-	private String veiculoNome;
+	
 	private boolean alocacao;
+	private Long alocacaoId;
 	private String telefone;
 	private String num;
-	private String dtNascimento;
+	private LocalDate dtNascimento;
+	private String dtNascimentoFormat;
 	private String dataCadastro;
 
 	public Cliente() {
@@ -55,7 +57,8 @@ public class Cliente {
 		this.num = num;
 		this.endereco = endereco;
 		this.telefone = telefone;
-		this.dtNascimento = dataN;
+		this.dtNascimentoFormat = dataN;
+		setDtNascimento(this.dtNascimentoFormat);
 		this.alocacao = false;
 		
 		
@@ -133,32 +136,41 @@ public class Cliente {
 	public void setDataCadastro(DateTime dataAtual) {
 		org.joda.time.format.DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/YYYY");
 		this.dataCadastro = dataAtual.toString(fmt);
+		
 
 	}
-	public String getDtNascimento() {
+	public LocalDate getDtNascimento() {
 		return dtNascimento;
 	}
 	public void setDtNascimento(String dtNascimento) {
-		this.dtNascimento = dtNascimento;
+		
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate data = LocalDate.parse(dtNascimento, formato); 
+		this.dtNascimento = data;
 	}
-	public String getVeiculoPlaca() {
-		return veiculoPlaca;
+	
+	
+	public String getDtNascimentoFormat() {
+		return dtNascimentoFormat;
 	}
-	public void setVeiculoPlaca(String veiculoPlaca) {
-		this.veiculoPlaca = veiculoPlaca;
+	public void setDtNascimentoFormat(String dtNascimentoFormat) {
+		this.dtNascimentoFormat = dtNascimentoFormat;
 	}
-	public String getVeiculoNome() {
-		return veiculoNome;
-	}
-	public void setVeiculoNome(String veiculoNome) {
-		this.veiculoNome = veiculoNome;
-	}
+	
 	public boolean isAlocacao() {
 		return alocacao;
 	}
 	public void setAlocacao(boolean alocacao) {
 		this.alocacao = alocacao;
 	}
+	public Long getAlocacaoId() {
+		return alocacaoId;
+	}
+	public void setAlocacaoId(Long alocacaoId) {
+		this.alocacaoId = alocacaoId;
+	}
+	
+	
 
 	
 

@@ -9,9 +9,9 @@
 			<a th:href="@{/}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
 			<h1>Desalocar</h1>
 			<div id="formulario">
-			<form action="#" th:action="@{/sig/realizarDesalocacao}" th:object="${cliente}" method="post">
+			<form action="#" th:action="@{/sig/realizarDesalocacao}" th:object="${alocar}" method="post">
 				<label for="desalCpfCliente">CPF do cliente: </label>
-				<input type="number" th:field="*{cpf}" id="alCpfCliente" name="alCpfCliente"><br><br>
+				<input type="number" th:field="*{clienteCpf}" id="alCpfCliente" name="alCpfCliente"><br><br>
 				<div id="desalConsulVeiculo">
 					<label for="txtDesalNomeVeiculo">Nome do veiculo: </label>
 					<label for="saDesalNomeVeiculo" id="desalNomeVeiculo" name="desalNomeVeiculo">xxxxxxxxxxxx </label>

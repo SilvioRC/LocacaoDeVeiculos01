@@ -24,19 +24,17 @@ public class Veiculo {
 	@Size(min = 1, max = 50, message = "Modelo deve ser preenchido")
 	private String modelo;
 	private boolean locado;
-	private String capacidade;
 	private String cor;
-	private int km;
+	private float valorDiaria;
 	
 	public Veiculo() {}
 	
-	public Veiculo(String placa, String nome,String modelo, String capacidade, int km) {
+	public Veiculo(String placa, String nome,String modelo, float valorDiaria) {
 		super();
 		this.placa = placa;
 		this.nome = nome;
 		this.modelo = modelo;
-		this.capacidade = capacidade;
-		this.km = km;
+		this.valorDiaria =valorDiaria;
 		this.locado = false;
 	}
 
@@ -79,13 +77,14 @@ public class Veiculo {
 	public void setLocado(boolean locado) {
 		this.locado = locado;
 	}
+	
 
-	public String getCapacidade() {
-		return capacidade;
+	public float getValorDiaria() {
+		return valorDiaria;
 	}
 
-	public void setCapacidade(String capacidade) {
-		this.capacidade = capacidade;
+	public void setValorDiaria(float valorDiaria) {
+		this.valorDiaria = valorDiaria;
 	}
 
 	public String getCor() {
@@ -96,13 +95,7 @@ public class Veiculo {
 		this.cor = cor;
 	}
 
-	public int getKm() {
-		return km;
-	}
-
-	public void setKm(int km) {
-		this.km = km;
-	}
+	
 	
 	
 }
