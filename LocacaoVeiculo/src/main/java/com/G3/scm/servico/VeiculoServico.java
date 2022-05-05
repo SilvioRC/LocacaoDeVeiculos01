@@ -2,6 +2,8 @@ package com.G3.scm.servico;
 
 import org.springframework.web.servlet.ModelAndView;
 import com.G3.scm.model.Veiculo;
+import org.springframework.beans.factory.BeanCreationException;
+import org.springframework.boot.autoconfigure.mail.MailSenderValidatorAutoConfiguration;
 
 public interface VeiculoServico {
 	public Iterable<Veiculo> findAll();
@@ -12,7 +14,7 @@ public interface VeiculoServico {
 
 	public Veiculo findById(Long id);
 
-	public ModelAndView saveOrUpdate(Veiculo veiculo);
+//	public ModelAndView saveOrUpdate(Veiculo veiculo);
 
 	
 }

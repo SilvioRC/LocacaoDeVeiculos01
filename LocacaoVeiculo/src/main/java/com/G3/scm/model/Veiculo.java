@@ -9,33 +9,47 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+
 @Entity
 public class Veiculo {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column(unique = true)
+	@Size(min = 7, max = 7)
 	private String placa;
-	
+	@NotNull
 	@Size(min = 1, max = 50, message = "Nome deve ser preenchido")
 	private String nome;
-	
+	@NotNull
 	@Size(min = 1, max = 50, message = "Modelo deve ser preenchido")
 	private String modelo;
 	private boolean locado;
+	@NotNull
+	@Size(min = 1, max = 50, message = "Cor deve ser preenchido")
 	private String cor;
+	@NotNull
+	@Size(min = 4, max = 4, message = "Ano deve ser preenchido")
+	private String ano;
+	@NotNull
 	private float valorDiaria;
+	private String dataCadastro;
 	
 	public Veiculo() {}
 	
-	public Veiculo(String placa, String nome,String modelo, float valorDiaria) {
+	public Veiculo(String placa, String nome,String modelo,String cor,String ano, float valorDiaria) {
 		super();
 		this.placa = placa;
 		this.nome = nome;
 		this.modelo = modelo;
+		this.cor = cor;
+		this.ano = ano;
 		this.valorDiaria =valorDiaria;
 		this.locado = false;
+		DateTime dataAtual = new DateTime();
+		setDataCadastro(dataAtual);
 	}
 
 	public Long getId() {
@@ -95,6 +109,30 @@ public class Veiculo {
 		this.cor = cor;
 	}
 
+	public String getAno() {
+		return ano;
+	}
+
+	public void setAno(String ano) {
+		this.ano = ano;
+	}
+	
+	public String getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(DateTime dataAtual) {
+		org.joda.time.format.DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/YYYY");
+		this.dataCadastro = dataAtual.toString(fmt);
+		
+
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -2,9 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <link rel="stylesheet" type="text/css" th:href="@{/css/estilo-login.css}" />
+<html>
+<body>
+<style>
 
-<head> </head>
-
+div {
+	color: #f97003;
+	padding: 20px;
+}
+</style>
+<body>
+<div>	
+<head><strong> THE RANGES: Locadora de Carros </strong> </head>
+<h1> <em> A MAIOR LOCADORA DE CARROS DO BRASIL 
+</em> </h1>
+ <p> Aqui você pode encontrar todos os  tipo de carros , e todos os preços </p>
+ </div>
+ </body>
+ </body>
+ </html>
 <body>
 	<div th:if="${param.error}">Invalid username and password.</div>
 	<div th:if="${param.logout}">You have been logged out.</div>
@@ -12,11 +28,36 @@
 		<div class="login-page">
 			<div class="form">
 				<form> <input type="text" name="username" placeholder="username" /> <input type="password"
-						name="password" placeholder="password" /> <button>login</button>
+						name="password" placeholder="password" />
+						<p> A senha deve conter pelo menos 8 caracteres quaisquer  </p>  
+						<button>login</button>
 					<p class="message"> Não cadastrado? <a href="#">Crie uma conta</a> </p>
 				</form>
+				</body>  <!-- Body adicionado  -->
 			</div>
+			<body>    <!-- Body adicionado  -->
+			<foster>
+			<ul>
+      <li><em> SUV's </em> </li> 
+      <li><em> Sedans</em></li>
+      <li><em> Hatchbacks</em></li>
+      <li><em> Caminhonetes</em> </li>
+       <li><em> Station Wagons </em> </li>
+        <li> <em> Vans</em> </li>
+      </ul>
+      </foster>
 		</div>
+		 <foster>
+          <ul>
+              <li> email: rangesdoti@outlook.com </li>
+              <li> Telefone Fixo : 4002-8922 </li>
+              <li> WhatsApp : 11- 98887-8777 </li>
+                <a href="http://rangersdoti.com/" > RangersDoT.I </a>
+
+   
+           </ul>
+    </foster>
+
 	</form>
 </body>
 

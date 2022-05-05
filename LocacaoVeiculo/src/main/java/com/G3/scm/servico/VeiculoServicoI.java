@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.beans.factory.BeanCreationException;
+import org.springframework.boot.autoconfigure.mail.MailSenderValidatorAutoConfiguration;
 import com.G3.scm.model.Veiculo;
 import com.G3.scm.model.VeiculoRepository;
 
@@ -33,8 +34,17 @@ public class VeiculoServicoI implements VeiculoServico {
 	public Veiculo findById(Long id) {
 		return veiculoRepository.findById(id).get();
 	}
+	public ModelAndView save(Veiculo veiculo) {
+		ModelAndView modelAndView = new ModelAndView("consultarVeiculo");
+		veiculo.setDataCadastro(new DateTime());
+		veiculoRepository.save(veiculo);
+		logger.info(">>>>>> 4. comando save executado  ");
+		modelAndView.addObject("veiculos", veiculoRepository.findAll());
+		 
+		return modelAndView;
+	}
 
-	public ModelAndView saveOrUpdate(Veiculo veiculo) {
+	/*public ModelAndView saveOrUpdate(Veiculo veiculo) {
 		ModelAndView modelAndView = new ModelAndView("consultarVeiculo");
 		try {
 			veiculoRepository.save(veiculo);
@@ -51,6 +61,6 @@ public class VeiculoServicoI implements VeiculoServico {
 			}
 		}
 		return modelAndView;
-	}
+	}*/
 
 }

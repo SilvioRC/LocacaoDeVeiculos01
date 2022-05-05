@@ -6,6 +6,24 @@
 	<link rel="stylesheet" th:href="@{/css/allStyle.css}" />
 </head>
 
+<style>
+
+div {
+	color: #f97003;
+	padding: 20px;
+}
+</style>
+<body>
+<div>	
+<head><strong> THE RANGES: Locadora de Carros </strong> </head>
+<h1> <em> A MAIOR LOCADORA DE CARROS DO BRASIL 
+</em> </h1>
+ <p> Aqui você pode encontrar todos os  tipo de carros , e todos os preços </p>
+ </div>
+ </body>
+ </html>
+
+
 <body>
 	<div class="Menu">
 		<a th:href="@{/}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
@@ -13,16 +31,19 @@
 		<div id="formulario">
 			<form action="#" th:action="@{/sig/alocados}" th:object="${alocar}" method="post">
 				<label for="alCpfCliente">CPF: </label>
-				<input type="text" th:field="*{clienteCpf}" id="alCpfCliente" name="alCpfCliente">
+				<input type="text" th:field="*{clienteCpf}" id="alCpfCliente" name="alCpfCliente" placeholder="CPF do Cliente">
+				<span th:if= "${#fields.hasErros('clienteCpf')}" th:errors="*{clienteCpf}" class="textdanger"></span>
 				
 				<label for="alCodVeiculo">Placa do veiculo: </label>
-				<input type="text"th:field="*{veiculoPlaca}"  id="alCodVeiculo" name="alCodVeiculo"><br><br>
+				<input type="text"th:field="*{veiculoPlaca}"  id="alCodVeiculo" name="alCodVeiculo" placeholder="Placa do Veiculo"><br><br>
+				<span th:if="${#fields.hasErrors('veiculoPlaca')}" th:errors="*{veiculoPlaca}" class="textdanger"></span>
 				
 				<label for="alDtReserva">Data da reserva: </label>
-				<input type="text"th:field="*{dtInicioFormat}" id="alDtReserva" name="alDtReserva"><br><br>
+			    <input type="text"th:field="*{dtInicioFormat}" id="alDtReserva" name="alDtReserva" placeholder="dd/mm/yyyy"><br><br>
 				
 				<label for="alDtDevolucao">Data de devolução: </label>
-				<input type="text"th:field="*{dtEntregaFormat}" id="alDtDevolucao" name="alDtDevolucao"><br><br>
+				<input type="text"th:field="*{dtEntregaFormat}" id="alDtDevolucao" name="alDtDevolucao" placeholder="dd/mm/yyyy"><br><br>
+				<span th:if="${#fields.hasErrors('dtEntregaFormat')}" th:errors="*{dtEntregaFormat}" class="textdanger"></span>
 				
 				<label for="enAlValorDiaria">Valor da diaria: </label>
 				<label for="saAlValorDiaria" id="alValorDiaria" name="alValorDiaria">xxxxxxxxxxxxx </label>
@@ -31,10 +52,19 @@
 				<input type="checkbox" id="contratoCliente" name="contratoCliente">
 				<label for="contratoCliente">Cliente assinou o contrato</label><br><br>
 				<div id="botaoConfirma">
-					<input type="submit" value="Alocar/Gerar boleto" id="confirmarCadastro" name="confirmarCadastro">
+					<input type="submit" value="Alocar" id="confirmarCadastro" name="confirmarCadastro">
 				</div>
 			</form>
+			<h6 th:text="${message}" class="text-danger"></h6>
 		</div>
+		 <ul>
+              <li> email: rangesdoti@outlook.com </li>
+              <li> Telefone Fixo : 4002-8922 </li>
+              <li> WhatsApp : 11- 98887-8777 </li>
+                <a href="http://rangersdoti.com/" > RangersDoT.I </a>
+
+   
+           </ul>
 	</div>
 </body>
 

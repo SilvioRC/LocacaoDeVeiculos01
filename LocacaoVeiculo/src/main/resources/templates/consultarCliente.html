@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
 
-<head>
-	<link rel="stylesheet" th:href="@{/css/consulClienteStyle.css}" />
-	<link rel="stylesheet" th:href="@{/css/allStyle.css}" />
-</head>
+<style>
+ {
+	background-color: #fffffc;
+	color: ##f97003;
+	padding: 20px;
+}
+</style>
+<body>
 
+<head>
+<head><strong> THE RANGES: Locadora de Carros </strong> </head>
+<h1> <em> A MAIOR LOCADORA DE CARROS DO BRASIL 
+</em> </h1>
+</head>
 <body>
 	<div class="Menu">
 		<a th:href="@{/sig/menuCliente}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
@@ -59,7 +68,18 @@
 						</tr>
 					</tbody>
 				</table>
+				<h6 th:text="${message}" class="text-danger"></h6>
 			</div>
+			 <foster>
+          <ul>
+              <li> email: rangesdoti@outlook.com </li>
+              <li> Telefone Fixo : 4002-8922 </li>
+              <li> WhatsApp : 11- 98887-8777 </li>
+                <a href="http://recicla+.com/" > RangesDoT.I </a>
+
+   
+           </ul>
+    </foster>
 		</div>
 	</div>
 </body>

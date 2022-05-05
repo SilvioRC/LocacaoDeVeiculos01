@@ -1,9 +1,12 @@
 body {
-  background-color: rgb(255, 255, 255);
+	 background-color: rgb(88,88, 88);
+   background-image: url("https://i.pinimg.com/originals/c8/b9/d3/c8b9d3be685f426218df3d94a9086e96.jpg");
+ 
 }
+
 .Menu{
 	background-color: #C1BDBE;
-	width: 50%;
+	width: 100%;
 	margin: auto;
 	position: center;
 	margin-top: 15%;
@@ -37,16 +40,27 @@ body {
 }
 
 .Menu .Opcoes{
-	width:80%;
+	width:center;
 	margin:auto;
 	text-align: center;
 	
+}
+.Menu .Opcoes #subMenu {
+	
+	list-style-type: none;
+	overflow: hidden;
+	margin: auto;
+	margin-left: 35%;
+	padding: 0;
+	width: 35%;
+	text-align: center;
 }
 .Menu .Opcoes ul{
 	list-style-type: none;
 	
 	overflow: hidden;
 	margin: auto;
+	margin-left: 25%;
 	padding: 0;
 	width: auto;
 	text-align: center;
@@ -76,7 +90,7 @@ body {
 
 .Menu #formulario{
 	margin:auto;
-	width: 85%;
+	width: 50%;
 	text-align: left;
 	border: 1px solid black;
 	padding-bottom: 2%;
@@ -97,7 +111,76 @@ body {
 	font-size: 20px;
 	font-weight: bold;
 	background-color: #A9A4A4;
+	border-radius: 5px;
 }
+.Menu #formulario form #consultar{
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #A9A4A4;
+	border-radius: 5px;
+}
+.bodyTable{
+	position: center;
+	font-family: Arial, Helvetica, sans-serif;
+	
+	
+}
+.table {
+	width: 100%;
+}
+
+.table tr th {
+	text-align: center;
+	padding-right: 0px;
+	margin-right: 0px;
+	background-color: #A9A4A4;
+	border-radius: 5px;
+	font-weight: bold;
+	
+	
+}
+
+.table tr td {
+	text-align: center;
+	padding-top: 10px;	
+}
+
+.btnDesalocar{
+	text-decoration: none;
+	background-color: rgb(255, 0, 0);
+	color:white;
+	font-weight: bold;
+	padding: 5%;
+	border-radius: 5px;
+}
+
+.btnAlterar{
+	text-decoration: none;
+	background-color: rgb(0, 64, 0);
+	color:white;
+	font-weight: bold;
+	
+	padding: 2px;
+	border-radius: 5px;
+}
+
+.btnDeletar{
+	text-decoration: none;
+	background-color: rgb(255, 0, 0);
+	color:white;
+	font-weight: bold;
+	padding: 2px;
+	border-radius: 5px;
+}
+
+.text-danger{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color:red;
+	text-align: center;
+}
+
+	
 
 
 

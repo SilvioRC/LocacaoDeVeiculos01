@@ -19,6 +19,13 @@ public class Endereco {
 	private String uf;
 	private String num;
 
+	
+
+	/*@Override
+	public String toString() {
+		return "Endereco [email=" + email + "]";
+	}*/
+
 	public Endereco() {
 	}
 

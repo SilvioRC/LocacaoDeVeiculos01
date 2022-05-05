@@ -6,15 +6,32 @@
 		<script type="text/javascript"> function consulta() {window.open("/sig/veiculos");} </script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
+	<style>
+
+div {
+	color: #f97003;
+	padding: 20px;
+}
+</style>
+<body>
+<div>	
+<head><strong> THE RANGES: Locadora de Carros </strong> </head>
+<h1> <em> A MAIOR LOCADORA DE CARROS DO BRASIL 
+</em> </h1>
+ <p> Aqui você pode encontrar todos os  tipo de carros , e todos os preços </p>
+ </div>
+ </body>
+ </html>
+	
 	<body>
 		<div class = "Menu">
 			<a th:href="@{/sig/menuVeiculo}" id="botaoVoltar"><button><img th:src="@{images/setaVoltar.png}" /></button></a>
 			<h1>Cadastrar Veiculo</h1>
 			<div id="formulario">
 				<form form action="#" th:action="@{/sig/veiculos/{id} (id=${veiculo.id}) }" th:object="${veiculo}" method="post">
-					<label for="nomeVeiculo">Nome do veiculo: </label>
-					<input type="text" th:field="*{nome}" id="nomeVeiculo" name="nomeVeiculo"><br><br>
-					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="textdanger"> </span>
+					<label for="fabricante">Fabricante: </label>
+					<input type="text" th:field="*{fabricante}" id="Fabricante" name="Fabricante"><br><br>
+					<span th:if="${#fields.hasErrors('fabricante')}" th:errors="*{nome}" class="textdanger"> </span>
 					
 					<label for="modeloVeiculo">Modelo: </label>
 					<input type="text" th:field="*{modelo}" id="modeloVeiculo" name="modeloVeiculo">

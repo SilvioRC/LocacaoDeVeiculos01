@@ -7,6 +7,25 @@
 	<script type="text/javascript"> function consulta() {window.open("/sig/veiculos");} </script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<html>
+<body>
+<style>
+
+div {
+	color: #f97003;
+	padding: 20px;
+}
+</style>
+<body>
+<div>	
+<head><strong> THE RANGES: Locadora de Carros </strong> </head>
+<h1> <em> A MAIOR LOCADORA DE CARROS DO BRASIL 
+</em> </h1>
+ <p> Aqui você pode encontrar todos os  tipo de carros , e todos os preços </p>
+ </div>
+ </body>
+ </body>
+ </html>
 
 <body>
 	<div class="Menu">
@@ -14,8 +33,9 @@
 		<h1>Cadastrar Veiculo</h1>
 		<div id="formulario">
 			<form action="#" th:action="@{/sig/veiculos}" th:object="${veiculo}" method="post">
-				<label for="nomeVeiculo">Nome do veiculo: </label>
-				<input type="text" th:field="*{nome}" id="nomeVeiculo" name="nomeVeiculo"><br><br>
+				<label for="nomeVeiculo">Fabricante: </label>
+				<input type="text" th:field="*{nome}" id="nomeVeiculo" name="nomeVeiculo"placeholder="Fabricante do Veiculo">
+				<br><br>
 				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="textdanger"> </span>
 					
 					<label for="modeloVeiculo">Modelo: </label>
